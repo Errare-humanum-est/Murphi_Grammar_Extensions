@@ -1,0 +1,35 @@
+### Colors ###
+
+# -- Grey --
+# comment.[]
+
+# -- Lila --
+# constant.[]
+
+# -- Hellgruen --
+# entity.name
+
+# -- Rot --
+# keyword.[]
+# storage.modifier
+
+# -- Blau --
+# support.function
+# support.constant
+
+# -- Blau kursiv --
+# storage.type
+# support.class
+# support.type
+
+# -- Gelb --
+# string.[]
+
+# -- Orange kursiv --
+# variable.[\other]
+
+# -- Rosa hinterlegt--
+# invalid.illegal
+
+# -- Lila hinterlegt--
+# invalid.illegal
