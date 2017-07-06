@@ -1,0 +1,135 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Murphi
+scopeName: source.m
+fileTypes: [m]
+uuid: 2014e228-1e33-49c7-9f69-93da82ddf436
+
+
+patterns:
+
+# Keywords
+- comment: Functions/Procedure
+  name: support.function.m
+  match: \b(([F|f]unction)|([P|p]rocedure)|([B|b]egin)|([E|e]nd)|([E|e]ndfunction)|([E|e]ndprocedure)|([R|r]eturn))\b
+
+- comment: Rules
+  name: constant.numeric.m
+  match: \b(([I|i]nvariant)|([R|r]ule)|([R|r]uleset)|([S|s]tartstate)|([E|e]ndrule)|([E|e]ndruleset)|([E|e]ndstartstate))\b 
+
+- comment: Structure
+  name: support.type.m
+  match: \b(([A|a]rray)|([E|e]ndrecord)|([O|o]f)|([R|r]ecord)|([U|u]nion))\b
+
+- comment: Sets and enumeration
+  name: variable.parameter.m
+  match: \b(([B|b]oolean)|([M|m]ultiset)|([S|s]calarset)|([E|e]num))\b
+
+- comment: Datatypes
+  name: constant.numeric.m
+  match: \b(([C|c]onst)|([T|t]ype)|([V|v]ar))\b 
+
+- comment: Boolean
+  name: keyword.control.m
+  match: \b(([F|f]alse)|([T|t]rue))\b 
+
+- comment: If
+  name: keyword.control.m
+  match: \b(([I|i]f)|([T|t]hen)|([E|e]lse)|([E|e]lsif)|([E|e]ndif))\b
+
+- comment: Switch
+  name: constant.numeric.m
+  match: \b(([E|e]ndswitch)|([S|s]witch)|([C|c]ase))\b
+
+# Two lines because new line seemed to cause some problems
+- comment: Repeat
+  name: keyword.operator.m
+  match: \b(([D|d]o)|([E|e]ndexists)|([E|e]ndfor)|([E|e]ndforall)|([E|e]ndwhile))\b
+- comment: Repeat
+  name: keyword.operator.m
+  match: \b(([E|e]xists)|([F|f]or)|([F|f]orall)|([T|t]o)|([W|w]hile))\b
+
+
+- comment: Assert Error
+  name: keyword.control.m
+  match: \b(([A|a]ssert)|([E|e]rror))\b 
+
+- comment: Undefine Value
+  name: keyword.control.m
+  match: \b(([U|u]ndefine))\b 
+
+- comment: Output
+  name: string.quoted
+  match: \b([P|p]ut)\b 
+
+
+- comment: Keywords
+  name: keyword.other.m
+  match: \b(([A|a]lias)|([B|b]y)|([C|c]hoose
+          )|([E|e]ndchoose)|([C|c]lear)|([E|e]ndalias)|([I|i]n
+          )|([I|i]nterleaved)|([L|l]og
+          )|([P|p]rocess)|([P|p]rogram)|([T|t]raceuntil))\b
+
+- comment: Member
+  name: markup.bold.m
+  match: \b(([I|i]smember)|([I|i]sundefined)|([M|m]ultisetadd)|([M|m]ultisetcount
+          )|([M|m]ultisetremove)|([M|m]ultisetremovepred))\b 
+
+
+- comment: Error
+  name: invalid.illegal.m
+  match: ((\=\=[^>])|\&\&|\|\|) 
+
+- name: Comment line
+  contentName: comment.line.m
+  begin: '(--|\/\/)'
+  beginCaptures:
+    '1': {name: comment.line.m}
+  end: \n
+
+- name: Comment block
+  contentName: comment.block.m
+  begin: '(\/\*)'
+  beginCaptures:
+    '1': {name: comment.block.m}
+  end: '(\*\/)'
+  endCaptures:
+    '1': {name: comment.block.m}
+
+### Colors ###
+
+# -- Grey --
+# comment.[]
+
+# -- Lila --
+# constant.[]
+
+# -- Hellgruen --
+# entity.name
+
+# -- Rot --
+# keyword.[]
+# storage.modifier
+
+# -- Blau --
+# support.function
+# support.constant
+
+# -- Blau kursiv --
+# storage.type
+# support.class
+# support.type
+
+# -- Gelb --
+# string.[]
+
+# -- Orange kursiv --
+# variable.[\other]
+
+# -- Rosa hinterlegt--
+# invalid.illegal
+
+# -- Lila hinterlegt--
+# invalid.illegal
+
+...
